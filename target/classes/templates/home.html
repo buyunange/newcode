@@ -1,0 +1,29 @@
+<html>
+    <body>
+    <pre>
+        $!{name} ##!如果不存在，强制为空
+        ${name}
+        ${name1}}
+        $!{name1}
+        Colors:$!{color}
+
+        ##循环列表
+        #foreach($colors in $color)
+            This is color:$colors 索引：$!{foreach.index} 第几个:$!{foreach.count}
+        #end
+        ##循环Map method1
+        #foreach($key in $map.keySet())
+        Number:$key,Value:$map.get($key)
+        #end
+        ##循环Map method2
+        #foreach($kv in $map.entrySet())
+        Number:$kv.key,Value:$kv.value
+        #end
+        #set($title="你好!")
+        Title:$!{title}
+        ##嵌入别的网页 ，parse可以解析
+        Parse:#parse("header.html")
+        Include:#include("header.html")
+    </pre>
+    </body>
+</html>
